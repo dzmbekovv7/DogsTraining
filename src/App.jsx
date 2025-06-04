@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { PawPrint, Dog, Cat, Heart } from 'lucide-react'; // иконки лапок и животных
+import { PawPrint, Dog, Cat, Heart } from 'lucide-react'; // paw and animal icons
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -13,14 +13,15 @@ import Privacy from './pages/Privacy';
 import AshleyArticlesPage from './pages/Articles';
 import AshleyArticleDetailPage from './pages/ArticlesDetailPage';
 import AnimatedPage from './components/FadeTransition';
-import CategoryArticlesPage from './pages/CategoryArticlesPage'
+import CategoryArticlesPage from './pages/CategoryArticlesPage';
 import ReviewsPage from './pages/Reviews';
+
 const loadingMessages = [
-  "🐾 Приготовься к погружению в сказочный мир!",
-  "🐕 Книги и лапки уже в пути...",
-  "😺 Листаем страницы с мягкой лапкой.",
-  "📚 Истории собираются в твою коллекцию!",
-  "🐾 Читаем вместе, как настоящие друзья!"
+  "🐾 Get ready to dive into the magical world!",
+  "🐕 Paws and animals are on their way...",
+  "😺 Flipping pages with a soft paw.",
+  "🐾 Stories gather in your collection!",
+  "🐾 Let's read together like true friends!"
 ];
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
   if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-white relative overflow-hidden px-6">
-        {/* Фон с необычной текстурой — мягкий кремовый узор */}
+        {/* Background with soft cream pattern */}
         <motion.div
           className="absolute inset-0"
           style={{
@@ -55,7 +56,7 @@ function App() {
           transition={{ duration: 120, repeat: Infinity, ease: 'linear' }}
         />
 
-        {/* Анимированные лапки и животные вокруг */}
+        {/* Animated paws and animals around */}
         <motion.div
           className="absolute top-10 left-10 text-[#EFAE62] opacity-70"
           animate={{ y: [0, 10, 0] }}
@@ -85,10 +86,10 @@ function App() {
           <PawPrint size={36} />
         </motion.div>
 
-        {/* Главный контент загрузки */}
+        {/* Main loading content */}
         <motion.img
-          src="https://cdn-icons-png.flaticon.com/512/616/616408.png" // заменил иконку на книгу с лапками
-          alt="Loading book"
+          src="https://cdn-icons-png.flaticon.com/512/616/616408.png" // paw icon
+          alt="Loading paws"
           className="w-28 h-28 mb-8 z-10"
           animate={{ scale: [1, 1.15, 1], rotate: [0, 5, -5, 0] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -126,11 +127,11 @@ function App() {
           <Route path="/about" element={<AnimatedPage><About /></AnimatedPage>} />
           <Route path="/introduction" element={<AnimatedPage><Introduction /></AnimatedPage>} />
           <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
-          <Route path='/reviews' element={<AnimatedPage><ReviewsPage /></AnimatedPage>} />
+          <Route path="/reviews" element={<AnimatedPage><ReviewsPage /></AnimatedPage>} />
           <Route path="/articles" element={<AnimatedPage><AshleyArticlesPage /></AnimatedPage>} />
           <Route path="/articles/:slug" element={<AnimatedPage><AshleyArticleDetailPage /></AnimatedPage>} />
           <Route path="/type/:typename" element={<AnimatedPage><CategoryArticlesPage /></AnimatedPage>} />
-          <Route path='/privacy' element={<AnimatedPage><Privacy /></AnimatedPage>} />
+          <Route path="/privacy" element={<AnimatedPage><Privacy /></AnimatedPage>} />
         </Routes>
       </AnimatePresence>
       <Footer />
