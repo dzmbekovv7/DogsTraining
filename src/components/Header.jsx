@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, PawPrint } from 'lucide-react';
 import { motion } from 'framer-motion';
+import ScrollToTopButton from './ScrollToTop';
 
 const navItems = ["Home", "Articles", "Reviews", "Privacy", "Contact", "About"];
 
@@ -18,13 +19,14 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header
-      className="bg-[#FFF1DC] relative overflow-hidden"
-      style={{
-        backgroundImage:
-          'url("https://www.transparenttextures.com/patterns/paw-print.png")',
-      }}
-    >
+<header
+  className="bg-[#FFF1DC] relative overflow-hidden"
+  style={{
+    backgroundImage:
+      'url("https://www.transparenttextures.com/patterns/paw-print.png")',
+  }}
+>
+
       {/* Dark overlay for mobile menu */}
       {isOpen && (
         <div
@@ -116,6 +118,8 @@ const Header = () => {
 ))}
 
       </motion.div>
+      <ScrollToTopButton />
+
     </header>
   );
 };
