@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CallToAction = () => (
   <section className="bg-gradient-to-r from-pink-50 to-indigo-50 text-white py-20 px-6 text-center">
     <motion.h3
-      className="text-4xl font-bold mb-6"
+      className="text-4xl font-bold text-gray-700 mb-6"
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -17,7 +17,7 @@ const CallToAction = () => (
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      Browse Our Books
+      Check articles
     </motion.button>
     </Link>
   </section>

@@ -112,7 +112,7 @@ const Hero = () => {
               userSelect: "text",
             }}
           >
-            Discover Your Next Great Read
+Discover Your Next Amazing Trained Dog
             {/* Под анимацией сияния */}
             <motion.span
               style={{
@@ -139,8 +139,8 @@ const Hero = () => {
               marginBottom: "30px",
             }}
           >
-            Explore an enchanting library full of magical stories, daring
-            adventures, and timeless classics—all waiting for you.
+  Explore the world of skilled, loyal, and well-trained dogs,
+  ready to impress with their intelligence and charm—all waiting for you.
           </p>
           <Link to="/articles">
             <button
@@ -166,7 +166,7 @@ const Hero = () => {
                 e.currentTarget.style.boxShadow = "0 5px 15px rgba(239,174,98,0.5)";
               }}
             >
-              Browse Books
+              Show articles 
             </button>
           </Link>
         </motion.div>
