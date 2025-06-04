@@ -9,34 +9,35 @@ const categories = [
   {
     name: "Basic Training",
     icon: <Dog className="w-10 h-10 text-yellow-400" />,
-    description: "Основы послушания и команды для вашей собаки.",
+    description: "Basic obedience and commands for your dog.",
   },
   {
     name: "Behavior Problems",
     icon: <ShieldCheck className="w-10 h-10 text-yellow-400" />,
-    description: "Решение проблем с агрессией, лаем и страхами.",
+    description: "Solving issues with aggression, barking, and fears.",
   },
   {
     name: "Agility",
     icon: <Activity className="w-10 h-10 text-yellow-400" />,
-    description: "Подготовка к соревнованиям и упражнения на ловкость.",
+    description: "Competition preparation and agility exercises.",
   },
   {
     name: "Nutrition & Health",
     icon: <Star className="w-10 h-10 text-yellow-400" />,
-    description: "Питание, витамины и поддержание здоровья питомца.",
+    description: "Nutrition, vitamins, and maintaining your pet's health.",
   },
   {
     name: "Puppy Care",
     icon: <Heart className="w-10 h-10 text-yellow-400" />,
-    description: "Уход и воспитание щенков с первых дней.",
+    description: "Caring for and raising puppies from day one.",
   },
   {
     name: "Advanced Tricks",
     icon: <Sparkles className="w-10 h-10 text-yellow-400" />,
-    description: "Изучение сложных трюков и команд.",
+    description: "Learning advanced tricks and commands.",
   },
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0, y: 30 },
