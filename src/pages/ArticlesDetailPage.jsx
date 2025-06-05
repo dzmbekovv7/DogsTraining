@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../supabase';
 import Loading from '../components/Loading';
-
+import './article.css'
 const AshleyArticleDetailPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -97,21 +97,37 @@ const AshleyArticleDetailPage = () => {
 
   if (loading) return <Loading />;
   if (!article) return <p>Article not found</p>;
-  const customMarkdown = (content) => {
-    if (!content) return ""
+
+  function addClassToLinks(html) {
+    if (!html) return "";
   
-    return content
+    // Используем регулярку для добавления класса к каждому <a ...>
+    return html.replace(/<a /g, '<a class="custom-link" ');
+  }
+  
+  const customMarkdown = (content) => {
+    if (!content) return "";
+  
+    let html = content
       .replace(/^# (.*$)/gm, '<h1>$1</h1>')
       .replace(/^## (.*$)/gm, '<h2>$1</h2>')
       .replace(/^### (.*$)/gm, '<h3>$1</h3>')
       .replace(/\*\*(.*?)\*\*/g, '<strong style="font-size: 30px; font-weight: 700;">$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-      .replace(/<img>(.*?)<\/img>/g, '<img src="$1" style="width: 70%; height: 100 %" loading="lazy" class="article-image-content" />')
+      .replace(
+        /\[(.*?)\]\((.*?)\)/g,
+        `<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>`
+      )
+      .replace(/<img>(.*?)<\/img>/g, '<img src="$1" style="width: 70%; height: 100%" loading="lazy" class="article-image-content" />')
       .split('\n')
       .map(line => line.trim() === '' ? '<br/>' : `<p>${line}</p>`)
-      .join('')
-  }
+      .join('');
+  
+    // Добавляем класс ко всем ссылкам
+    return addClassToLinks(html);
+  };
+  
+
   return (
     <div className="max-w-6xl mx-auto p-6 mt-10 flex flex-col lg:flex-row gap-10 bg-gradient-to-b from-[#f7f3ee] via-[#f9f6f0] to-[#f7f3ee] rounded-xl shadow-lg">
       <div className="lg:w-2/3">
