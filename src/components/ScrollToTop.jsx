@@ -24,11 +24,11 @@ const ScrollToTopButton = () => {
       animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
       transition={{ duration: 0.4 }}
       onClick={scrollToTop}
-      className="fixed bottom-6 right-6 bg-[#EFAE62] text-white p-3 rounded-full shadow-lg z-50 hover:bg-[#d49c4d] transition"
+      className="fixed bottom-6 right-6 bg-[#EFAE62] text-white p-3 rounded-full shadow-lg z-[19999999999] hover:bg-[#d49c4d] transition"
     >
       <ChevronUp className="w-6 h-6 text-[#4B2E2E]" />
     </motion.button>
   );
 };
 
-export default ScrollToTopButton
+export default ScrollToTopButton;

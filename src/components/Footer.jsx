@@ -45,7 +45,8 @@ const Footer = () => {
         {[
           { name: "Home", path: "/" },
           { name: "About", path: "/about" },
-          { name: "Blog", path: "/articles" },
+          { name: "Articles", path: "/articles" },
+          { name: "Reviews", path: "/reviews"},
           { name: "Testimonials", path: "/reviews" },
           { name: "Contact", path: "/contact" },
         ].map((item) => (
@@ -62,9 +63,11 @@ const Footer = () => {
       {/* Копирайт */}
       <div className="copyright mt-8 text-sm text-gray-300 select-text z-30">
         © 2025 <span className="font-semibold text-yellow-400">BookDragon</span> by Busyok Creative. All rights reserved. |{" "}
+        <Link to="/privacy">
         <a href="#" className="privacy-link">
           Privacy Policy
         </a>
+        </Link>
       </div>
 
       {/* Ionicons Scripts */}
