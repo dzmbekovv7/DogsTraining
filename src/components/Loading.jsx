@@ -43,7 +43,7 @@ const Loading = () => {
   }, [])
 
   return (
-    <div className="flex mt-[-5px] flex-col h-[300px] items-center justify-center text-center px-4">
+    <div className="flex mt-[-5px] flex-col h-[420px] items-center justify-center text-center px-4">
 <motion.div
   className="mb-6"
   initial={{ rotate: -10, scale: 0.8 }}
